@@ -62,13 +62,26 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q2</summary>
 <br>
 
-  
+  #### What are the most important aspects of quality software?
+
+  Reliability: Software should reliably give consistently correct output under any condition. Errors that occur in the software have been planned for and are handled. Users should not wonder whether the program is functioning correctly.
+
+  Maintainability: Software should be created and updated in a way that it is easy to maintain. The code base should be written in such a way that it is relatively easy to add new features or tweak existing ones. The maintenance and modification of the program should be thought of in advance and no two elements should be so tightly tied together than one exclusively relies on the other. Points for future new features should be considered from the outset. 
+
+  Usability: The core functionality of the software should be obvious and easy to use. Common use cases should be catered for and made intuitive for users. The software shouldn't need a lot of configuration or intricate setup from the user. Navigation should be obvious and simple. A common design theme should be used throughout the software. 
+
+  Testability: The core functionality of the software should be testable and the results verifiable. The production software will have its own automated testing suite. The tests for the software should be simple, easy to understand and specific. All business use cases should be tested for thoroughly before release. 
+
+  Portability: 
+
 
   <details>
   <summary>Resources</summary>
   <br>
 
-    
+    *  https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/
+    *  http://www.chappellassoc.com/writing/white_papers/The_Three_Aspects_of_Software_Quality_v1.0-Chappell.pdf
+    *  https://www.softwaretestinghelp.com/what-are-the-quality-attributes/
     
   </details>
    
