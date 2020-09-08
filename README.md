@@ -82,6 +82,7 @@ Using this approach to software development. A large project can have multiple t
     *  https://www.silasreinagel.com/blog/2016/11/15/the-seven-aspects-of-software-quality/
     *  http://www.chappellassoc.com/writing/white_papers/The_Three_Aspects_of_Software_Quality_v1.0-Chappell.pdf
     *  https://www.softwaretestinghelp.com/what-are-the-quality-attributes/
+    *  https://iso25000.com/index.php/en/iso-25000-standards/iso-25010?limit=3&limitstart=0
     
   </details>
    
