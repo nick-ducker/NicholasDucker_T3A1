@@ -72,8 +72,11 @@ Using this approach to software development. A large project can have multiple t
 
   Testability: The core functionality of the software should be testable and the results verifiable. The production software will have its own automated testing suite. The tests for the software should be simple, easy to understand and specific. All business use cases should be tested for thoroughly before release. 
 
-  Portability: 
+  Portability: The software should be flexible in its operating environment. It shouldn't be dependant on a specific operating system or the environment in which it is deployed. The software should be useful across other projects. It shouldn't require lengthy installation processes.
 
+  Efficiency: The software should use the least amount of resources possible to give the desired outputs. This includes CPU usage, the actual power drawn to run the software, external calls to API's and internal calls to a database. It should also be memory efficient and use as little space as possible.
+
+  Security: The software should handle and maintain the integrity of sensitive data in a way that takes into account the sensitivity of that data. The software should manage degrees of accessibility to this information. The software should be able to trace accountability of data access and submission. The software should also track events in relating to security.
 
   <details>
   <summary>Resources</summary>
