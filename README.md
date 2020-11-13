@@ -97,7 +97,15 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q3</summary>
 <br>
 
-  
+  #### Outline a standard high level structure for a MERN stack application and explain the components
+
+  Mongo:
+
+  Express:
+
+  React:
+
+  Node:
 
   <details>
   <summary>Resources</summary>
@@ -115,7 +123,21 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q4</summary>
 <br>
 
-  
+  #### A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
+
+  Agile:
+
+  Planning:
+
+  Communication:
+
+  Front end:
+
+  Back end:
+
+  Testing:
+
+  Deployment:
 
   <details>
   <summary>Resources</summary>
@@ -133,7 +155,19 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q5</summary>
 <br>
 
-  
+  #### With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges
+
+  Caculocation
+
+  Planning
+
+  Workload management
+
+  Front end development
+
+  API considerations
+
+  UX design
 
   <details>
   <summary>Resources</summary>
@@ -151,25 +185,15 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q6</summary>
 <br>
 
-  
+  #### With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature
 
-  <details>
-  <summary>Resources</summary>
-  <br>
+  More time for UX/UI 
 
-    
-    
-  </details>
-   
-</details>
+  Better planning around time frames
 
+  Research before planning phase
 
-
-<details>
-<summary>Q6</summary>
-<br>
-
-  
+  More thought around how to couple a back and front end
 
   <details>
   <summary>Resources</summary>
@@ -187,12 +211,12 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q7</summary>
 <br>
 
-  
+  #### Explain control flow, using an example from the JavaScript programming language
 
   <details>
   <summary>Resources</summary>
   <br>
-
+  https://developer.mozilla.org/en-US/docs/Glossary/Control_flow
     
     
   </details>
@@ -205,12 +229,12 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q8</summary>
 <br>
 
-  
+  #### Explain type coercion, using examples from the JavaScript programming language
 
   <details>
   <summary>Resources</summary>
   <br>
-
+  https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion
     
     
   </details>
@@ -223,12 +247,12 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q9</summary>
 <br>
 
-  
+  #### Explain data types, using examples from the JavaScript programming language
 
   <details>
   <summary>Resources</summary>
   <br>
-
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
     
     
   </details>
@@ -241,12 +265,12 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q10</summary>
 <br>
 
-  
+  #### Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language
 
   <details>
   <summary>Resources</summary>
   <br>
-
+  https://developer.mozilla.org/en-US/docs/Glossary/array
     
     
   </details>
@@ -259,12 +283,12 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q11</summary>
 <br>
 
-  
+  #### Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language
 
   <details>
   <summary>Resources</summary>
   <br>
-
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
     
     
   </details>
@@ -277,12 +301,12 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q12</summary>
 <br>
 
-  
+  #### Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language
 
   <details>
   <summary>Resources</summary>
   <br>
-
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON
     
     
   </details>
@@ -295,7 +319,47 @@ Using this approach to software development. A large project can have multiple t
 <summary>Q13</summary>
 <br>
 
-  
+  #### For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes
+
+  ```
+  class Car {
+    constructor(brand) {
+        this.carname = brand;
+      }
+      present() {
+        return 'I have a ' + this.carname;
+      }
+    }
+
+    class Model extends Car {
+      constructor(brand, mod) {
+        super(brand);
+      this.model = mod;
+    }
+      show() {
+        return this.present() + ', it was made in ' + this.model;
+      }
+    }
+
+    let makes = ["Ford", "Holden", "Toyota"]
+    let models = Array.from(new Array(40), (x,i) => i + 1980)
+
+    function randomIntFromInterval(min,max) { // min and max included
+      return Math.floor(Math.random()*(max-min+1)+min);
+    }
+
+    for (model of models) {
+
+    make = makes[randomIntFromInterval(0,makes.length-1)]
+    model = models[randomIntFromInterval(0,makes.length-1)]
+       
+    mycar = new Model(make, model);
+    console.log(mycar.show())
+  }
+
+
+
+  ```
 
   <details>
   <summary>Resources</summary>
