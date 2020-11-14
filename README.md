@@ -99,17 +99,23 @@ Using this approach to software development. A large project can have multiple t
 
   #### Outline a standard high level structure for a MERN stack application and explain the components
 
-  Mongo:
+  The MERN stack is a term used to describe four different Javascript frameworks. These frameworks in order are Mongo, Express, React and Node. Developers can pull these four frameworks together to look after different "layers" of a web application, giving each layer a fully fledged framework to work off of. This gives developers quite a substantial level of flexibility in how they choose to design their application, and how much data and logic is handled by each technology, and therefore, each layer. 
 
-  Express:
+  ![Mern stack diagram](imgs/mern.png)
 
-  React:
+  Mongo: MongoDB is a NoSQL database that stores what Mongo call "Documents", which have a similar format to JSON files. The power of Mongo lies in that it gives developers a lot of flexibility in how they choose to store data akin to what they would find in a JSON file. Mongo interacts with the Express backend framework and acts as the database for the entire application. Express can make calls to MongoDB in order to extract and store needed data.
 
-  Node:
+  Express: Express is a web server framework that is based in Node, which is also another backend framework. It is essentially a framework within a framework. Express allows developers to create flexible, un-opinionated web servers that can flexibly interact with many different technologies. Express is essentially plumbed to provide React with the correct data through routing and calls the the MongoDB database. 
+
+  React: React is a front end framework that allows easy "rendering" of HTML based on a framework handled "state". The implementation of this technology makes it easy to create and maintain a "state", that can be passed from Express via its routing and calls to MongoDB. React also allows for easy creation of dynamic webpages, cutting down the amount of calls that need to be made to the Express server. 
+
+  Node: Node is a server side, lightweight JS environment that allows code to be executed outside of the browser. Express is built and executed within Node, so essentially a web server that is running Node.js is also then running Express through Node. 
 
   <details>
   <summary>Resources</summary>
   <br>
+
+  * https://www.mongodb.com/mern-stack
 
     
     
@@ -125,19 +131,19 @@ Using this approach to software development. A large project can have multiple t
 
   #### A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 
-  Agile:
+  Agile: Using the Agile approach to developing a project, a team can quickly and effectively tackle each stage in of the project in planning phases and sprints, rather than using older, waterfall style methodologies. This allows the team to also effectively communicate throughout the project.
 
-  Planning:
+  Planning: A good understanding of a planning approach to use at the start of the project, as well as during the project is integral to developing a project. Using some kind of structure to conceptualise then plan the broad strokes of the project, such as user stories, can help get the idea started. Translating this into an actionable Trello board can help keep the team on task and up to date with the progress of the project as a whole. This also keeps the workload "manageable" as it splits the work into more managable chunks. 
 
-  Communication:
+  Communication: Creating a framework around communication between developers and/or teams of developers is integral. This is somewhat addressed by using a methodology like agile to develop. However, conceptually agreeing with that approach to communication is important. Teams should be able to look at communication as a part of their development process and make critical decisions about their approach. 
 
-  Front end:
+  Front end: Skills in developing an intuitive and lightweight front end is intrinsic to creating an effective business website. This requires skills in UI and UX design and being able to bring these two visions together to create an excellent front end. The front end should also interact with the back end in an efficient way, passing data only when needed and eager loading what is likely to be used.
 
-  Back end:
+  Back end: Developing a effective and relatively lightweight back end is beneficial to all applications. Being intentional around the usage of Express, as it is such an un-opinionated framework. While the flexibility here is a blessing, it is also a curse. Teams can design a functional back end early on in the project, but without proper planning can find themselves consistently finding "workarounds" for new features (or even planned features). Being able to have a long term vision and putting in the foundations for this vision from the outset should be a focus.
 
-  Testing:
+  Testing: Thinking about testing from the beginning of the project will allow the team to create a more fleshed out road map for development of the project. Not only that, but they can also test each feature as they go, allowing refinement and tweaking of parts of the project according to shifting needs and vision, without compromising the entire project. Skills in Test Driven Development help create a more robust, functional application from the outset, rather than trying to catch all the bugs towards the end of the project. 
 
-  Deployment:
+  Deployment: Deployment vision is important to a development of an application. This includes thinking about how much use the application will get, how data intensive it is, what the budget is and designing to this. It also includes thinking about how the application can be scaled, in both directions, in the future. Is the application elastic enough that it can be added to or taken from easily, or does this require a full redesign?
 
   <details>
   <summary>Resources</summary>
@@ -157,17 +163,15 @@ Using this approach to software development. A large project can have multiple t
 
   #### With reference to one of your own projects, discuss what knowledge or skills were required to complete your project, and to overcome challenges
 
-  Caculocation
+  Caculocation was a project done for one of the Coder Academy hack-a-thon challenges. It was completed with the help of one other colleague. We only had a three day period in order to take this project from planning to completion, which changed the way we approached the project.
 
-  Planning
+  Planning: As we were operating on such a restricted timeline, we used our knowledge of Trello and splitting projects up into managable chunks from the outset. This looked like drafting our ideas on paper and then essentially breaking them up on Trello as best we could. As the project progressed, we would essentially check in with each other and Trello in order to get a good mental idea of what we needed to be doing each part of each day. 
 
-  Workload management
+  Workload management: We used a mixture of Trello and communication to decide the workloads we were both going to take on. For Caculocation, we needed to plumb in a front end mapping API that would interact with the data that Express would pull from Mongo. While this ultimate took less lines of code than the express server itself, we decided that one person would do the "known" coding of creating an Express back end, while the other would try to work out how the mapping API worked and how to the format of the data should look like coming from the back end. This was done in accessory to creating an intuitive, light weight front end.
 
-  Front end development
+  API considerations: As a team we had to decide which API we were going to use for mapping, which meant sifting through and somewhat testing API's we thought would work well with our application. Being able to decipher API's and figure out relatively quickly whether we thought they would be good for our purposes was something that drew on all of the skills we had learnt up to that point. I found it actually quite engaging to try and decipher an API in a short amount of time! Taking this to the next level and synthesizing the docs data into a working API on our application was the next level to this process and was equally engaging. 
 
-  API considerations
-
-  UX design
+  UX design: Having a good handle on how the application flowed and its ease of use was also another part of the project that required some forethought and planning. We actually got a bit caught out by this at the end somewhat, as the focus early in the project was simply to make it functional, an MVP. However, I tried to put some though into the UX flow while I was designing the front end from the outset. As the project matured and we got into the final stages, we focused in on the UX to try and deliver a simple, yet polished, application. 
 
   <details>
   <summary>Resources</summary>
@@ -187,13 +191,15 @@ Using this approach to software development. A large project can have multiple t
 
   #### With reference to one of your own projects, evaluate how effective your knowledge and skills were for this project, and suggest changes or improvements for future projects of a similar nature
 
-  More time for UX/UI 
+  This is written in regards to Caculocation, which is described in the previous question also. 
 
-  Better planning around time frames
+  More time for UX/UI: Being more intentional about the UI/UX we were going for would have given us a better idea of time we needed to spend on the project, as well as what kind of application we were aiming for. I think we focused in on the MVP features a little too much and forgot to also think about the MVP UI/UX. For a web based application, I think the UI/UX for the core features should be a part of the MVP, as no one will want to interact with even the most functional and effective application if UI and UX has not been taken into consideration. 
 
-  Research before planning phase
+  Better planning around time frames: I think this comes with experience, but being able to predict time frames for certain steps/stages of the project is something to work on. With a better sense of what kind of work is needed for certain stage, you're able to know what you'll be able to achieve in a certain time frame. It also gives more structure around communication and checking in at certain times. With this project, I think we aimed somewhat low, as there were some unknowns in the picture, but certainly learnt a lot around this. 
 
-  More thought around how to couple a back and front end
+  Research before planning phase: This ties into the above point. Doing research with API's, experimenting with building Express Servers from scratch and thinking about MongoDB schemas before the actual project, or as part of the research before the planning of the project can save time and energy. Essentially this time and energy is being put in anyway, just earlier, but it allows us to get a better understanding of a technology/API from a zoomed out perspective, before we hone in and decide this is what we're going to use in this particular way.
+
+  More thought around how to couple a back and front end: A roadblock to this project was not understanding exactly how the mapping API functioned when we started the project, which ties back to the above point also. Looking back, I now know that most mapping API's require a lat/long in order to map a point and can return lat/longs from the actual map. Even this small bit of knowledge would have changed the way I initially approached planning how to connect back and front end. Being quite intentional about this in the future allows early planning and implementation around the predicted model. It also would allow for easier testing from the outset. In fact, testing probably would force this process a bit more, as you would have to think about what is moving between the front and the back end before writing any code whatsoever. 
 
   <details>
   <summary>Resources</summary>
