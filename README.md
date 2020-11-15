@@ -219,10 +219,52 @@ Using this approach to software development. A large project can have multiple t
 
   #### Explain control flow, using an example from the JavaScript programming language
 
+  Control flow is the order in which a language will run statements in a file of code. Generally speaking, a computer will run code, line by line, executing each command/statement as it comes along it. Control flow allows programmers to influence what is executed depending on conditional statements. This conceptually can be boiled down to if x, then do y. Javascript gives programmers a few different options in control flow.
+
+  ```
+  // The if statement is one of the most basic control flow expressions available
+  // if the conditional evaluates to true, the code inside the block will run. 
+  // Optionally, an else if statement can be used to check another conditional. 
+  // Lastly, an else statement can be added that will run if all conditionals resolve to false.
+
+  if (conditional == true) {
+    functionOne()
+  } else if (otherConditional == true) {
+    functionTwo()
+  } else {
+    functionThree()
+  }
+
+  // A switch statement can check a conditional against many "cases". If the conditional evaluates true to a case, then that block of code is run.
+  // As this switch statement is not returning anything and is working on side effects, we must use a break statement to exit the switch once a case is matched.
+
+  switch(number) {
+    case 1:
+      console.log('numero uno');
+      break;
+    case 2:
+      console.log('one more than one');
+      break;
+  }
+
+  // While loops will continue to run while the conditional passed to them is evaluated as true. It will run the code block, check the conditional and then run until the conditional returns false.
+
+  let running = true
+  let number = 0
+
+  while(running) {
+    number++
+    running = (number === 5) ? false : true
+  }
+  ```
+
+  There are several other loop options in JS, including do while, for, for of, for await of and for in, which all work off the same basic principle of checking some conditional that will break the loop.
+
   <details>
   <summary>Resources</summary>
   <br>
-  https://developer.mozilla.org/en-US/docs/Glossary/Control_flow
+  *  https://developer.mozilla.org/en-US/docs/Glossary/Control_flow
+  *  https://exploringjs.com/impatient-js/ch_control-flow.html
     
     
   </details>
@@ -236,6 +278,35 @@ Using this approach to software development. A large project can have multiple t
 <br>
 
   #### Explain type coercion, using examples from the JavaScript programming language
+
+  Type coercion is the implicit conversion of a value from one data type to another. For example, changing the string '1' to the integer 1 would be an example of Type coercion or type conversion. What separates conversion from coercion is that when we type convert, we are explicit in what kind of data type we want the compiler to read. Type coercion leaves this decision up to the compiler depending on the input.
+
+  ```
+  // two examples of type coercion
+
+  // Here, the compiler coerces the second variable, val2, into a string when added to val1
+  const val1 = "3"
+  const val2 = 4
+  const result = val1 + val2
+
+  console.log(result) // '34'
+
+  //If we use the minus operator, then the compiler will try to coerce the string into an integer
+  const val1 = "3"
+  const val2 = 4
+  const result = val1 + val2
+
+  console.log(result) // -1
+  ``` 
+
+  // Type conversion is when we are explicit in how we want the compiler to convert a value.
+  // In this example, we tell the computer we wish val1 to be coverted to a number before addition
+
+  const val1 = "3"
+  const val2 = 4
+  const result = Number(val1) + val2
+
+  console.log(result) // 7
 
   <details>
   <summary>Resources</summary>
@@ -255,6 +326,44 @@ Using this approach to software development. A large project can have multiple t
 
   #### Explain data types, using examples from the JavaScript programming language
 
+  Data types are, simply put, the different types of data a programming language can manipulate. Many of these types are common across most languages, but the way an language interacts with a data type can differ. JS recognizes six different data types:
+
+  *  undefined
+  *  Boolean
+  *  Number
+  *  String
+  *  BigInt
+  *  Symbol
+
+```
+  // Undefined is the data type of a variable that has not had anything assigned to it yet. JS first creates its variables, then assigns them a value if one has been provided. Until this is done, a variable will return undefined
+
+  let var1
+  console.log(var1) // => undefined
+
+  // A Boolean is a simple true, or false, that will be evaluated as such by the compiler.
+
+  let num = 4
+  let isItFive = (num === 5)
+  console.log(typeof isItFive) // => boolean
+
+  // A number is any number that falls within -(2 ** 53 − 1) and 2 ** 53 − 1. This is inclusive of floats also, which can be differentiated in other programming languages. Numbers larger or smaller than these maximums are unsafe. BigInts should be used instead outside of these ranges. A BigInt can be defined by using an n at the end of a number
+
+  let smallNum = 10
+  let bigNum = 10n
+
+  console.log(typeof smallNum) // => number
+  console.log(typeof bigNum) // => bigint
+
+  // A string is essentially a collection of elements that take up space in somewhat of an array. Each character has its own positions, starting from index 0. 
+
+  let greeting = "Hello there"
+
+  console.log(typeof greeting) // => string
+  console.log(greeting[1]) // => 'e'
+
+```
+
   <details>
   <summary>Resources</summary>
   <br>
@@ -273,10 +382,63 @@ Using this approach to software development. A large project can have multiple t
 
   #### Explain how arrays can be manipulated in JavaScript, using examples from the JavaScript programming language
 
+  Arrays allow programmers to store a group of different data types into one single variable that can be operated on and manipulated. Generally there is some reason or commonality to the data that is stored. Programmers can add and remove items to the array, as well as iterate over that array in different ways, or pull single elements from the array. Below are some common manipulations of an array
+
+  ```
+    // Here we define an array of 4 elements, each element being a number from 1 to 4
+    let array = [1,2,3,4]
+
+    // We can call back a specific element in the array by asking for its index
+    console.log(array[1]) // => 2
+
+    // We can add an item to the end or start of an array by using push or unshift respectively
+    array.push('five')
+    array.unshift('zero')
+
+    console.log(array) // => ['zero', 1, 2, 3, 4,'five']
+
+    // We can also remove the first element from the start or the end using shift and pop respectively
+    array.shift()
+    array.pop()
+
+    console.log(array) // => [1,2,3,4]
+
+    // We can loop through the elements in an array and execute a code block for each element using for each
+
+    let elementCount = 0
+    array.forEach((element) => {
+      elementCount += element
+    })
+
+    console.log(elementCount) // => 10
+
+    // We can use map to return an array of elements that have had some work done to each element
+
+    let newArray = array.map((element) => {
+      return element * 2
+    })
+
+    console.log(newArray) // => [2, 4, 6, 8]
+
+    // We can use filter to return a list of elements that evaluate true according to a provided conditional
+
+    let selection = array.filter((element) => {
+      return element >= 3
+    })
+
+    console.log(selection) // => [3, 4]
+
+    // We can remove items from an array using splice
+    let removed = array.splice(1,2) // Here we remove two numbers from the array, starting from index 1. The removed elements are returned
+
+    console.log(removed) // => [2,3]
+    console.log(array) // => [1,4]
+  ```
+
   <details>
   <summary>Resources</summary>
   <br>
-  https://developer.mozilla.org/en-US/docs/Glossary/array
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
     
     
   </details>
