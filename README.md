@@ -453,24 +453,6 @@ Using this approach to software development. A large project can have multiple t
 
   #### Explain how objects can be manipulated in JavaScript, using examples from the JavaScript programming language
 
-  <details>
-  <summary>Resources</summary>
-  <br>
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
-    
-    
-  </details>
-   
-</details>
-
-
-
-<details>
-<summary>Q12</summary>
-<br>
-
-  #### Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language
-
   Objects are also data structures like arrays, but instead use a "key value" pair in order to call back data. When an object is created, it will be created with keys that will return both a wide range of data types and structures
 
   ```
@@ -513,6 +495,67 @@ Using this approach to software development. A large project can have multiple t
     // => { more: "secrets" }
 
     // the .keys() and .values() functions are also useful, returning an array of the object keys and values respectively.
+  ```
+
+  <details>
+  <summary>Resources</summary>
+  <br>
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+    
+    
+  </details>
+   
+</details>
+
+
+
+<details>
+<summary>Q12</summary>
+<br>
+
+  #### Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language
+
+  JSON objects are used to store large amounts of data in a relatively easy to read and interact with format. While JSON files look a lot like a JS object, they are different. A JSON file must be parsed into a JS object before it can be interacted with, and a JS object must be stringified into a JSON file.
+
+  ```
+  // Here we have a simple JS object
+    const browserInfo = {
+     browsers: {
+       firefox: {
+         name: "Firefox",
+         pref_url: "about:config",
+         releases: {
+           1: {
+             release_date: 2004-11-09,
+             status: "retired",
+             engine: "Gecko",
+             engine_version: 1.7
+           }
+         }
+       }
+     }
+   }
+
+  // If we stringify the object, we'll get almost the same result, but with some JSON differences. All keys and values in a JSON file must be double quoted
+
+  return JSON.stringify(browserInfo)
+
+  =>{
+  =>  "browsers": {
+  =>    "firefox": {
+  =>      "name": "Firefox",
+  =>      "pref_url": "about:config",
+  =>      "releases": {
+  =>        "1": {
+  =>          "release_date": "2004-11-09",
+  =>          "status": "retired",
+  =>          "engine": "Gecko",
+  =>          "engine_version": "1.7"
+  =>        }
+  =>      }
+  =>    }
+  =>  }
+  =>}
   ```
 
   <details>
