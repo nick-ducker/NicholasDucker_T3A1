@@ -471,6 +471,50 @@ Using this approach to software development. A large project can have multiple t
 
   #### Explain how JSON can be manipulated in JavaScript, using examples from the JavaScript programming language
 
+  Objects are also data structures like arrays, but instead use a "key value" pair in order to call back data. When an object is created, it will be created with keys that will return both a wide range of data types and structures
+
+  ```
+    // Creating an object is as simple as writing an expression using the correct object syntax
+
+    let obj = {
+      firstKey: "I'm a string",
+      secondKey: 232,
+      thirdKey: ["what","am","I"]
+      fourthKey: {
+        more: "secrets"
+      }
+    }
+
+    //Common ways of interacting with JS objects is simply calling back data using the correct keys
+
+    console.log(obj.firstKey) // => "I'm a string"
+
+    // As we can see above, we can store both arrays and objects within an object
+
+    console.log(obj.thirdKey[2]) // => "I"
+    console.log(obj.fourthKey.more) // => "secrets"
+
+    // We can also easily change the value of an objects key
+    const oldValue = obj.secondKey
+    obj.secondKey = 5000
+    console.log(`before: ${oldValue}, after: ${obj.secondKey}) // => "before: 232, after: 5000"
+
+    // Objects are generally used as storage containers for data types that we do further work on once we've returned them. However, there are a few inbuilt methods in JS that help us manipulate objects further.
+
+    // The for-in loop will loop over each key of an object. This gives programmers a lot of flexibility in working through and entire object data set
+
+    for (const property in obj) {
+      console.log(obj[property])
+    }
+
+    // => "I'm a string"
+    // => 232
+    // => ["what","am","i"]
+    // => { more: "secrets" }
+
+    // the .keys() and .values() functions are also useful, returning an array of the object keys and values respectively.
+  ```
+
   <details>
   <summary>Resources</summary>
   <br>
