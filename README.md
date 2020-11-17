@@ -577,40 +577,64 @@ Using this approach to software development. A large project can have multiple t
   #### For the code snippet provided below, write comments for each line of code to explain its functionality. In your comments you must demonstrates your ability to recognise and identify functions, ranges and classes
 
   ```
-  class Car {
-    constructor(brand) {
+    // Here we define a new class named car. The Class statement allows us to create a new object class, as well as its functions, constructor and properties
+    class Car {
+      // The constructor is called every time a new instance of Car is created. We must define what things are passed to the constructor as JS will look for these upon creation
+      constructor(brand) {
+        // the 'this' statement refers to the Car object that has just been created. We can attach properties to the specific Car object by then declaring a variable and assigning either a passed value, or a default value
         this.carname = brand;
       }
+      // Here we define an object function that can be called on a specific car object. If we have a Car object named "car1", we can now call car1.present()
       present() {
+        // When the present function is called on a created Car object, it will return "i have a" and then look at that specific objects carname property.
         return 'I have a ' + this.carname;
       }
     }
 
+    // Here we create a new class called Model, except it extends from the Car class. This means it inherits all the functions and properties from the Car class, and we can add more properties and functionality.
     class Model extends Car {
+      // The constructor is called everytime a Model object is created and expects two arguments. Notice how we're using the same name for the brand variable
       constructor(brand, mod) {
+        // Here we call super and pass it the brand argument. JS will look at the Car class in order to find instruction on what to do with this. This means we should be able to access the value of the brand argument in the same way we do for Car as we do for Model.
         super(brand);
-      this.model = mod;
-    }
+        // Here we add another property to the Model class object called model, which takes the argument mod from the constructor to assign a value.
+        this.model = mod;
+      }
+      // Here we created a function that we can call on a specific Make object 
       show() {
+        // This line will call the present() function defined in the Car class, which returns into the string, and then calls the model property of the make class, then returns the whole string
         return this.present() + ', it was made in ' + this.model;
       }
     }
 
+    // Here we create a new array of 3 strings and assign it to the variable "makes"
     let makes = ["Ford", "Holden", "Toyota"]
+
+    // Here we create a 40 element array starting from 1980 and going up to 2020. We do this by calling Array.from(). The first argument is an array like object that is iterable, in this case a new array of 40 elements length. The second argument is an anonymous mapping function. This mapping function returns the current index being iterated over ("i") plus 1980, giving us an incremented array of numbers from 1980 to 2020 
     let models = Array.from(new Array(40), (x,i) => i + 1980)
 
+    // Here we declare a random number function that takes a min argument and max argument
     function randomIntFromInterval(min,max) { // min and max included
+
+      // Here, we call Math.floor(), which will return the rounded down value of whatever number we pass to it. The value being passed has a few things going on. First we call Math.random, which returns a float between 0 and 1, non-inclusive of 1. We then multiply it by the max take the min plus one, plus the minimum. This ensures we never times by 0. For example, if the max was 10 and the min was 5 and the random float resolves to 0.87, we get 0.87 * 11, which would return 9.57, which is then floored to 9. I'm not enough of a mathematician to understand the exact reason why this works, which is probably why y'all copied it from StackOverflow in the first place anyway.
       return Math.floor(Math.random()*(max-min+1)+min);
     }
 
+    // Here we use a for in loop to iterate over the models array, doing work within the block for each element within the array.
     for (model of models) {
 
-    make = makes[randomIntFromInterval(0,makes.length-1)]
-    model = models[randomIntFromInterval(0,makes.length-1)]
+      // Here we assign a random make to the make variable using the random number function and passing it 0 as a minimum, which would be the first element index, and makes.length-1, which would be the last element index.
+      make = makes[randomIntFromInterval(0,makes.length-1)]
+      // Here we assign a random model to the model variable in the same manner.
+      model = models[randomIntFromInterval(0,makes.length-1)]
        
-    mycar = new Model(make, model);
-    console.log(mycar.show())
-  }
+      // We now instantiate a new Model object, which inherits from car, and pass it the make and model which is then assigned to instantiated Model object. 
+      mycar = new Model(make, model);
+      // Lastly, we console log what is returned when we call the show() method on our instantiated Model object named my car. This should console log "I have a ${make} it was made in ${model}". The ${} expressions in the string would resolve to whatever values were assigned durinf the iteration.
+      console.log(mycar.show())
+
+      //This loop will run 40 times, once for each element of the array, console logging 40 different, random strings to the console.
+    }
 
 
 
